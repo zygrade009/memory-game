@@ -2,7 +2,6 @@
     display: flex;
     justify-content: left;
     gap: 20px;
-    background-color: var(--color-header);
     padding :25px;
 }
 .header-title{
