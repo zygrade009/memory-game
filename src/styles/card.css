@@ -1,0 +1,24 @@
+.Card-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(var(--color-secondary),var(--color-primary));
+    width: 180px;
+    height: 250px;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: var(--color-font);
+}
+.Card-container:hover{
+    transform: scale(1.1);
+}
+.Card-container img{
+    height: 200px;
+    width: 160px;
+}
+.Card-title{
+    font-weight: 600;
+    text-align: center;
+}

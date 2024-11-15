@@ -1,9 +1,12 @@
+:root{
+    --color-cool: #576CBC;
+    --color-primary: #19376D;
+    --color-secondary:#0B2447;
+    --color-frost:#A5D7E8;
+    --color-font: white;
+}
 body{
     margin: 0px;
     padding: 0px;
     font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;    
-}
-:root{
-    --color-header: black;
-    --color-font-header:white;
 }

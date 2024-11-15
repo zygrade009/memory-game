@@ -1,0 +1,4 @@
+.level-title:hover{
+    text-decoration: underline;
+    color: var(--color-font);
+}

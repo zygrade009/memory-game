@@ -1,15 +1,9 @@
 .header-container{
     display: flex;
-    justify-content: left;
-    gap: 20px;
-    padding :25px;
+    background-color:var(--color-secondary);
+    padding: 15px;
+    color: var(--color-font);
 }
 .header-title{
-    color: var(--color-font-header);
-    font-size: 36px;
-    font-weight: 700;
-}
-.header-container img{
-    height: 36px;
-    width: 36px;
+    font-size: 20px;   
 }
