@@ -1,4 +1,8 @@
+.level-title{
+    font-size: 25px;
+    font-weight: 900;
+    color: var(--color-font);
+}
 .level-title:hover{
     text-decoration: underline;
-    color: var(--color-font);
 }

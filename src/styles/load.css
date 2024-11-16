@@ -1,6 +1,17 @@
 .LoadContainer{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.LoadContainer .title{
     text-align: center;
-    font-size: 36px;
+    font-size: 30px;
     color: var(--color-font);
     font-weight: 900;
+}
+.LoadContainer img{
+    height: 200px;
+    width: 200px;
 }

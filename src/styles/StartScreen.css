@@ -1,6 +1,13 @@
-.Start-container{
+.start-container{
     display: flex;
     flex-direction: column;
     justify-content:center;
+    align-items: center;
     gap: 10px;
+    background-color: var(--color-primary);
+    border: 10px double var(--color-frost);
+    border-radius: 5px;
+    padding: 50px;
+    min-width: 250px;
+    box-shadow: 10px 10px var(--color-cool);
 }

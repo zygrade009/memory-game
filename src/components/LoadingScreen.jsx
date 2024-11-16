@@ -2,7 +2,8 @@ import "../styles/load.css"
 function LoadingScreen() {
   return (
     <div className="LoadContainer">
-        Loading.........
+        <img src="src\assets\loading.png" alt="loading" />
+        <div className="title"> Loading...</div>
     </div>
   )
 }
