@@ -6,12 +6,15 @@ import "./App.css";
 import LoadingScreen from "./components/LoadingScreen";
 import Startscreen from "./components/Startscreen";
 import GameScreen from "./components/GameScreen";
+
 function App() {
   const [isLoading,setLoading] = useState(true);
   const [characters,setCharacters]=useState([]);
-  const [gameStatus,setGameStatus]=useState(0);
-  let choice=[];
-  
+  const [level,setLevel]=useState(0);
+  const [Cards,setCards]=useState([]);
+  const [count,setCount]=useState(0);
+  const [chosenCards,setChosenCards]=useState([]);
+  const [loss,setLoss]=useState(0);
   useEffect(()=>{
     try {
       getPokemons(setCharacters);
@@ -21,19 +24,23 @@ function App() {
     }
     
   },[]);
-  let level=5;
-  const randomCards=(level)=>{
-      while(choice.length!==level){
-         let index=Math.floor(Math.random()*characters.length);
-         if(choice.length===0||!choice.includes(characters[index])){
-           choice.push(characters[index]);
-         }
+  
+  useEffect(()=>{
+    let showCards=[];
+    while(showCards.length!==level){
+      let index=Math.floor(Math.random()*characters.length);
+      if(showCards.length===0||!showCards.includes(characters[index])){
+        showCards.push(characters[index]);
       }
+    }
+    setCards(showCards);
+    setLoading(0);
+  },[level,characters]);
+  
+  const handleScoreIncrement=()=>{
+    setCount((prevCount)=>prevCount+1);
   }
-  // if(isLoading){
-  //   randomCards(level);
-  //   console.log(choice);
-  // }
+ 
   return (
     <div className="app-container">
       <Header/>
@@ -41,7 +48,21 @@ function App() {
        <div className="content">
        {
         isLoading? <LoadingScreen/>:  
-         gameStatus===0?<Startscreen/>:<GameScreen/>
+         level===0?<Startscreen 
+         setLevel={setLevel} 
+         setLoading={setLoading}
+         />:
+         <GameScreen 
+         showCards={Cards} 
+         level={level} 
+         chosenCards={chosenCards} 
+         setChosenCards={setChosenCards} 
+         count={count} 
+         handleScoreIncrement={handleScoreIncrement}
+         loss={loss}
+         setLoss={setLoss}
+         />
+
        }
        </div>
       </div>
@@ -49,7 +70,7 @@ function App() {
   )
 }
 
-export default App
+export default App;
 {/* <div>
             {characters && characters.map((character, index) => (
            <Card  key={index} name={character.name} image={character.image}/>

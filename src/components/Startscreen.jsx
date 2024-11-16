@@ -1,15 +1,15 @@
-import LevelSelector from "./LevelSelector"
+import LevelSelector from "./LevelSelector";
 
-import "../styles/StartScreen.css";
-function Startscreen() {
+import "../styles/Screen.css";
+function Startscreen({setLevel, setLoading}) {
 
   return (
-    <div className="start-container">
-       <LevelSelector >Easy</LevelSelector>
-       <LevelSelector >Medium</LevelSelector>
-       <LevelSelector >Hard</LevelSelector>       
+    <div className="small-container">
+       <LevelSelector level={4} setLevel={setLevel} setLoading={setLoading}>Easy</LevelSelector>
+       <LevelSelector level={6} setLevel={setLevel} setLoading={setLoading}>Medium</LevelSelector>
+       <LevelSelector level={8} setLevel={setLevel} setLoading={setLoading}>Hard</LevelSelector>       
     </div>
-  )
+  );
 }
 
 export default Startscreen;

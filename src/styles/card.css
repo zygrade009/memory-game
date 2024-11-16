@@ -5,8 +5,8 @@
     gap: 20px;
     padding: 20px;
     background: linear-gradient(var(--color-secondary),var(--color-primary));
-    width: 180px;
-    height: 250px;
+    width: 100px;
+    height: 180px;
     border: 1px solid black;
     border-radius: 5px;
     color: var(--color-font);
@@ -15,8 +15,8 @@
     transform: scale(1.1);
 }
 .Card-container img{
-    height: 200px;
-    width: 160px;
+    height: 100px;
+    width: 100px;
 }
 .Card-title{
     font-weight: 600;

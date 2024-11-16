@@ -1,6 +1,40 @@
-function GameScreen() {
+import Card from "./Card";
+import "../styles/gameScreen.css"
+import ScoreCard from "./ScoreCard";
+import LossGame from "./LossGame";
+import WinGame from "./WinGame";
+function GameScreen({showCards,level,handleScoreIncrement,count,chosenCards,setChosenCards,loss,setLoss}) {
+  
+  const shuffleCards=()=>{
+    for (let i = showCards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [showCards[i], showCards[j]] = [showCards[j], showCards[i]];
+    }
+  }
+  const handleClickCard=(card)=>{
+     if(chosenCards.length===0||!chosenCards.includes(card)){
+         setChosenCards((prevChosenCards)=>[...prevChosenCards,card]);
+         handleScoreIncrement();
+         shuffleCards();
+         console.log(card);
+     }else{
+        console.log("handle lost game");
+        setLoss(1);
+     }
+  }
+  console.log(showCards);
   return (
-    <div>GameScreen</div>
+      <>{
+        loss? <LossGame/> : count===level ? <WinGame/> :<div className="GameContainer">
+        <ScoreCard score={count} highScore={0}/>
+        <div className="GameCardContainer">
+       {showCards && showCards.map((card,index)=>(
+        <Card key={index} name={card.name} image={card.image} handleClick={()=>{handleClickCard(card)}}/>
+       ))}
+    </div>
+  </div>
+      }
+      </>
   )
 }
 

@@ -1,4 +1,4 @@
-.start-container{
+.small-container{
     display: flex;
     flex-direction: column;
     justify-content:center;
@@ -10,4 +10,8 @@
     padding: 50px;
     min-width: 250px;
     box-shadow: 10px 10px var(--color-cool);
+}
+.small-container img{
+    height: 250px;
+    width: 250px;
 }

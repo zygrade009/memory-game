@@ -19,3 +19,4 @@ const getPokemons= async(setCharacters)=>{
     }
 }
 export default getPokemons;
+
