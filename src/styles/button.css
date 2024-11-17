@@ -1,0 +1,14 @@
+.button-container{
+    background-color: var(--color-frost);
+    padding: 5px;
+    height: 25px;
+    width: 100px;
+    text-align: center;
+    border-radius: 20px;
+    border: 2px solid var(--color-font);
+}
+.button-title{
+    font-weight: bold;
+    font-size: 20px;
+    color:black;
+}

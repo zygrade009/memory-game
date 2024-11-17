@@ -3,7 +3,7 @@ import "../styles/gameScreen.css"
 import ScoreCard from "./ScoreCard";
 import LossGame from "./LossGame";
 import WinGame from "./WinGame";
-function GameScreen({showCards,level,handleScoreIncrement,count,chosenCards,setChosenCards,loss,setLoss}) {
+function GameScreen({showCards,level,handleScoreIncrement,count,chosenCards,setChosenCards,loss,setLoss,handleRestart}) {
   
   const shuffleCards=()=>{
     for (let i = showCards.length - 1; i > 0; i--) {
@@ -25,8 +25,8 @@ function GameScreen({showCards,level,handleScoreIncrement,count,chosenCards,setC
   console.log(showCards);
   return (
       <>{
-        loss? <LossGame/> : count===level ? <WinGame/> :<div className="GameContainer">
-        <ScoreCard score={count} highScore={0}/>
+        loss? <LossGame handleRestart={handleRestart}/> : count.score===level ? <WinGame handleRestart={handleRestart}/> :<div className="GameContainer">
+        <ScoreCard score={count.score} highScore={count.highScore}/>
         <div className="GameCardContainer">
        {showCards && showCards.map((card,index)=>(
         <Card key={index} name={card.name} image={card.image} handleClick={()=>{handleClickCard(card)}}/>

@@ -1,12 +1,15 @@
 import "../styles/Screen.css";
 import "../styles/levelSelector.css";
-function LossGame() {
+import Button from "./Button";
+function LossGame({handleRestart}) {
+  
   return (
     <div className="small-container">
         <img src="src\assets\loss.png" alt="loss" />
-        <div className="level-title">You Lose !</div>
+        <div className="headline">You Lose !</div>
+        <Button handleRestart={handleRestart}>Restart</Button>
     </div>
   )
 }
 
-export default LossGame
+export default LossGame;

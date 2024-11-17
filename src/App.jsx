@@ -12,7 +12,7 @@ function App() {
   const [characters,setCharacters]=useState([]);
   const [level,setLevel]=useState(0);
   const [Cards,setCards]=useState([]);
-  const [count,setCount]=useState(0);
+  const [count,setCount]=useState({score:0,highScore:0});
   const [chosenCards,setChosenCards]=useState([]);
   const [loss,setLoss]=useState(0);
   useEffect(()=>{
@@ -38,9 +38,19 @@ function App() {
   },[level,characters]);
   
   const handleScoreIncrement=()=>{
-    setCount((prevCount)=>prevCount+1);
+    setCount((prevCount)=>({score: prevCount.score+1,
+      highScore : (prevCount.highScore>prevCount.score+1)?prevCount.highScore:prevCount.score+1,
+    }));
+    
   }
- 
+  const handleRestart=()=>{
+      setCount((prevCount)=>({
+        score: 0,
+        highScore: prevCount.highScore,
+      }));
+      setLoss(0);
+      setLevel(0);
+  }
   return (
     <div className="app-container">
       <Header/>
@@ -61,6 +71,7 @@ function App() {
          handleScoreIncrement={handleScoreIncrement}
          loss={loss}
          setLoss={setLoss}
+         handleRestart={handleRestart}
          />
 
        }
